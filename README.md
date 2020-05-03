@@ -21,4 +21,9 @@ The following flags should follow the name of your spec file i.e. `my_spec.rb --
 | `--no-color` | N/A |Tests don't have color |
 | `--format progress` | `-f p` | One dot (.) for each test that passes or one 'F' for each failing test |
 | `--format documentation` | `-f d` | Detailed decriptions for each test |
+| `--order random` | N/A | Runs tests in random order |
+| `--profile` | `p` | Gives timings for slower examples |
+| `--fail fast` | N/A | Stops at first failing test |
+| `:line_number` | N/A | i.e. `my_spec.rb:3` will run tests for code on line 3 |
+
 
