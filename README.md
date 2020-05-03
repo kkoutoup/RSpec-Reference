@@ -4,6 +4,8 @@ A reference for writing and running tests with RSpec for Ruby
 ## Purpose
 Putting this together as I'm learning TDD with Ruby and RSpec
 
+## Resources
+[RSpec on Github](https://github.com/rspec)
 ## File structure
 ```
 lib
