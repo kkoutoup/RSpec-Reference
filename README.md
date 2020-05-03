@@ -6,6 +6,10 @@ Putting this together as I'm learning TDD with Ruby and RSpec
 
 ## Resources
 [RSpec on Github](https://github.com/rspec)
+
+## Install
+```gem install rspec```
+
 ## File structure
 ```
 lib
