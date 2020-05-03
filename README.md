@@ -7,9 +7,9 @@ Putting this together as I'm learning TDD with Ruby and RSpec
 ## File structure
 ```
 lib
- |__file_name.rb
- spec
- |__file_name_spec.rb
+  |__file_name.rb
+spec
+  |__file_name_spec.rb
 ```
 
 ## Flags
