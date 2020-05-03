@@ -17,4 +17,8 @@ The following flags should follow the name of your spec file i.e. `my_spec.rb --
 
 | Flag          | Result        | 
 | ------------- |:-------------:|
-| `--c color` or `-c`| applies green/red color for successful/failing tests|
+| `--c color` or `-c` | applies green/red color for successful/failing tests|
+| `--no-color` |  tests don't have color |
+| `--format progress` or `-f p` | progress is shown as one dot (.) assinged for each test that 
+passes or one 'F' for each failing test |
+
