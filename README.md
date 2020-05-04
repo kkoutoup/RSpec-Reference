@@ -37,6 +37,7 @@ The following flags should follow the name of your spec file i.e. `my_spec.rb --
 | `:line_number` | N/A | i.e. `my_spec.rb:3` will run tests for code on line 3 |
 
 ### expect(). to eq()
+#### instance attributes
 ```ruby
 class Car
   attr_reader :make, :model
@@ -75,4 +76,12 @@ describe "Car" do
 end
 ```
 
-
+#### instance methods
+```ruby
+describe "#present_car" do # use # to refer to instance methods
+  it "should return a string with the car's year make and model" do
+    car = Car.new("Honda", "Civic", "2000")
+    expect(car.present_car).to eq("A 2000 Honda Civic")
+  end
+end
+```

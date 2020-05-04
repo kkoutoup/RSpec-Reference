@@ -21,16 +21,11 @@ describe "Car" do
     end
   end
 
-  describe "#old?" do
-    # create an instance
-    car = Car.new("Honda", "Civic", "2000")
-    
-    context "when year is before 2015" do
-      it "should return true" do
-        expect(car.old?).to be_old
-      end
+  describe "#present_car" do # use # to refer to instance methods
+    it "should return a string with the car's year, make and model" do
+      car = Car.new("Honda", "Civic", "2000")
+      expect(car.present_car).to eq("A 2000 Honda Civic")
     end
   end
-  
 
 end
