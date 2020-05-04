@@ -9,6 +9,10 @@ class Car
     @year = year
   end
 
+  def self.categories # class method
+    ["sedan", "coupe", "suv", "convertible", "hatchback", "sports", "station wagon"]
+  end
+
   def format_make
     @make = @make.capitalize
   end

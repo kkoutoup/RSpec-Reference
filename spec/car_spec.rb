@@ -80,4 +80,21 @@ describe "Car" do
       end
     end
   end
+
+  describe "a new car" do
+    it "should be an instance of the parent class Car" do
+      car = Car.new("Lancia", "Delta", "1987")
+      expect(car).to be_instance_of(Car)
+    end
+  end
+
+  describe "parent class method Car.categories" do  
+    it "should be of type array" do
+      expect(Car.categories).to be_an Array
+    end
+
+    it "should be an array of strings" do
+      expect(Car.categories.all?(String)).to be true
+    end
+  end
 end

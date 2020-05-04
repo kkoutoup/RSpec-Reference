@@ -49,6 +49,10 @@ class Car
     @year = year
   end
 
+  def self.categories # class method
+    ["sedan", "coupe", "suv", "convertible", "hatchback", "sports", "station wagon"]
+  end
+
   def format_make
     @make = @make.capitalize
   end
@@ -162,6 +166,29 @@ describe "#old?" do
       car = Car.new("Nissan", "Navara", "2015")
       expect(car).to_not be_old
     end
+  end
+end
+```
+
+### expect().to be_instance_of(class)
+```ruby
+describe "a new car" do
+  it "should be an instance of the parent class" do
+    car = Car.new("Lancia", "Delta", "1987")
+    expect(car).to be_instance_of(Car)
+  end
+end
+```
+
+### expect().to be_an Class
+```ruby
+describe "parent class method Car.categories" do  
+  it "should be of type array" do
+    expect(Car.categories).to be_an Array
+  end
+
+  it "should be an array of strings" do
+    expect(Car.categories.all?(String)).to be true
   end
 end
 ```
