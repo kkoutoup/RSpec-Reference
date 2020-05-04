@@ -36,7 +36,7 @@ The following flags should follow the name of your spec file i.e. `my_spec.rb --
 | `--fail fast` | N/A | Stops at first failing test |
 | `:line_number` | N/A | i.e. `my_spec.rb:3` will run tests for code on line 3 |
 
-### expect(). to eq()
+### Example Class
 ```ruby
 class Car
   attr_reader :make, :model
@@ -54,6 +54,8 @@ class Car
   end
 end
 ```
+### expect(). to eq()
+
 #### instance attributes
 ```ruby
 describe "Car" do
