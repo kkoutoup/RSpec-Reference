@@ -97,4 +97,11 @@ describe "Car" do
       expect(Car.categories.all?(String)).to be true
     end
   end
+
+  describe "instance attribute year" do
+    it "should be of type String" do
+      car = Car.new("Toyota", "Avensis", "2019")
+      expect(car.year).to be_a String
+    end
+  end
 end
