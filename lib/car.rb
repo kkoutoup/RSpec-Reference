@@ -1,4 +1,5 @@
 class Car
+
   attr_reader :make, :model
   attr_writer :model
   attr_accessor :year
