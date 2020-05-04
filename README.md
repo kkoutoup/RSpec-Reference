@@ -193,9 +193,9 @@ describe "parent class method Car.categories" do
 end
 
 describe "instance attribute year" do
-    it "should be of type String" do
-      car = Car.new("Toyota", "Avensis", "2019")
-      expect(car.year).to be_a String
-    end
+  it "should be of type String" do
+    car = Car.new("Toyota", "Avensis", "2019")
+    expect(car.year).to be_a String
   end
+end
 ```
