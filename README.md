@@ -40,9 +40,8 @@ The following flags should follow the name of your spec file i.e. `my_spec.rb --
 ```ruby
 class Car
 
-  attr_reader :make, :model
-  attr_writer :model
-  attr_accessor :year
+  attr_reader :make
+  attr_accessor :model, :year
 
   def initialize(make, model, year)
     @make = make
