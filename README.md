@@ -39,6 +39,7 @@ The following flags should follow the name of your spec file i.e. `my_spec.rb --
 ### Example Class
 ```ruby
 class Car
+
   attr_reader :make, :model
   attr_writer :model
   attr_accessor :year
@@ -49,8 +50,21 @@ class Car
     @year = year
   end
 
+  def format_make
+    @make = @make.capitalize
+  end
+  
+  def format_model
+    @model = @model.split(" ").map { |word| word.capitalize }.join(" ")
+  end
+  
+
+  def present_car
+    "A #{@year} #{@make} #{@model}"
+  end
+
   def old?
-    @year < 2015
+    @year.to_i < 2015
   end
 end
 ```

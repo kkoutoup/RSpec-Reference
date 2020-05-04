@@ -10,6 +10,15 @@ class Car
     @year = year
   end
 
+  def format_make
+    @make = @make.capitalize
+  end
+  
+  def format_model
+    @model = @model.split(" ").map { |word| word.capitalize }.join(" ")
+  end
+  
+
   def present_car
     "A #{@year} #{@make} #{@model}"
   end
