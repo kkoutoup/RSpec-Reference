@@ -7,7 +7,7 @@ Putting this together as I'm learning TDD with Ruby and RSpec
 ## Resources
 [RSpec on Github](https://github.com/rspec)
 
-## Install
+## Installation
 1. Install the gem ```gem install rspec```
 2. Create the file structure
 3. In the project's root directory use the ```rspec --init``` to create a configuration file ```.rpsec``` and a ```spec_helper.rb``` file inside the ```spec``` folder.
@@ -18,6 +18,8 @@ lib
   |__file_name.rb
 spec
   |__file_name_spec.rb
+  |__spec_helper.rb
+.rspec
 ```
 
 ## Flags
