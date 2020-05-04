@@ -97,6 +97,20 @@ end
 
 #### instance methods
 ```ruby
+describe "#format_make" do
+  it "should capitalize the car's :make" do
+    car = Car.new("honda", "civic", "2000")
+    expect(car.format_make).to eq("Honda")
+  end
+end
+
+describe "#format_model" do
+  it "should capitalize every word in a car's model" do
+    car = Car.new("Honda", "type r", "2000")
+    expect(car.format_model).to eq("Type R")
+  end
+end
+
 describe "#present_car" do # use # for instance methods
   it "should return a string with the car's year make and model" do
     car = Car.new("Honda", "Civic", "2000")
