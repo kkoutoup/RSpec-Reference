@@ -8,4 +8,10 @@ class Car
     @model = model
     @year = year
   end
+
+  def old?
+    @year.to_i < 2015
+  end
+  
+
 end

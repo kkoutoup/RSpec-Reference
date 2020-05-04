@@ -37,7 +37,7 @@ The following flags should follow the name of your spec file i.e. `my_spec.rb --
 | `:line_number` | N/A | i.e. `my_spec.rb:3` will run tests for code on line 3 |
 
 ### expect(). to eq()
-```
+```ruby
 class Car
   attr_reader :make, :model
   attr_writer :model
@@ -51,7 +51,7 @@ class Car
 end
 ```
 
-```
+```ruby
 describe "Car" do
   describe "reading and writing object attributes" do
     # create an instance
