@@ -8,7 +8,9 @@ Putting this together as I'm learning TDD with Ruby and RSpec
 [RSpec on Github](https://github.com/rspec)
 
 ## Install
-```gem install rspec```
+1. Install the gem ```gem install rspec```
+2. Create the file structure
+3. In the project's root directory use the ```rspec --init``` to create a configuration file ```.rpsec``` and a ```spec_helper.rb``` file inside the ```spec``` folder.
 
 ## File structure
 ```
@@ -19,7 +21,7 @@ spec
 ```
 
 ## Flags
-The following flags should follow the name of your spec file i.e. `my_spec.rb --color`
+The following flags should follow the name of your spec file i.e. `my_spec.rb --color`. These flags can also be part of your ```rspec.file```.
 
 | Flag          | Short for Flag        | Result        |
 | ------------- |:-------------:|:-------------:|
