@@ -10,7 +10,7 @@ Putting this together as I'm learning TDD with Ruby and RSpec
 ## Installation
 1. Install the gem ```gem install rspec```
 2. Create the file structure
-3. In the project's root directory use the ```rspec --init``` to create a configuration file ```.rpsec``` and a ```spec_helper.rb``` file inside the ```spec``` folder.
+3. In the project's root directory use the ```rspec --init``` to create a configuration file ```.rspec``` and a ```spec_helper.rb``` file inside the ```spec``` folder.
 
 ## File structure
 ```
@@ -23,7 +23,7 @@ spec
 ```
 
 ## Flags
-The following flags should follow the name of your spec file i.e. `my_spec.rb --color`. These flags can also be part of your ```rspec.file```.
+The following flags should follow the name of your spec file i.e. `my_spec.rb --color`. These flags can also be part of your ```.rspec``` file.
 
 | Flag          | Short for Flag        | Result        |
 | ------------- |:-------------:|:-------------:|
@@ -35,5 +35,44 @@ The following flags should follow the name of your spec file i.e. `my_spec.rb --
 | `--profile` | `-p` | Gives timings for slower examples |
 | `--fail fast` | N/A | Stops at first failing test |
 | `:line_number` | N/A | i.e. `my_spec.rb:3` will run tests for code on line 3 |
+
+### expect(). to eq()
+```
+class Car
+  attr_reader :make, :model
+  attr_writer :model
+  attr_accessor :year
+
+  def initialize(make, model, year)
+    @make = make
+    @model = model
+    @year = year
+  end
+end
+```
+
+```
+describe "Car" do
+  describe "reading and writing object attributes" do
+    # create an instance
+    car = Car.new("Honda", "Civic", "2000")
+
+    it "should allow read access to :make" do
+      expect(car.make).to eq("Honda")
+    end
+
+    it "should allow write access to :model" do
+      car.model = "Type-R"
+      expect(car.model).to eq("Type-R")
+    end
+
+    it "should allow read and write access to :year" do
+      expect(car.year).to eq("2000")
+      car.year = "2005"
+      expect(car.year).to eq("2005")
+    end
+  end
+end
+```
 
 
