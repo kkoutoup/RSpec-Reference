@@ -1,8 +1,7 @@
 class Car
 
-  attr_reader :make, :model
-  attr_writer :model
-  attr_accessor :year
+  attr_reader :make
+  attr_accessor :model, :year
 
   def initialize(make, model, year)
     @make = make

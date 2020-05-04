@@ -9,7 +9,7 @@ describe "Car" do
       expect(car.make).to eq("Honda")
     end
 
-    it "should allow write access to :model" do
+    it "should allow read and write access to :model" do
       car.model = "Type-R"
       expect(car.model).to eq("Type-R")
     end
