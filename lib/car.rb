@@ -12,6 +12,4 @@ class Car
   def present_car
     "A #{@year} #{@make} #{@model}"
   end
-  
-
 end
