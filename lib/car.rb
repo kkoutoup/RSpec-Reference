@@ -12,4 +12,8 @@ class Car
   def present_car
     "A #{@year} #{@make} #{@model}"
   end
+
+  def old?
+    @year.to_i < 2015
+  end
 end

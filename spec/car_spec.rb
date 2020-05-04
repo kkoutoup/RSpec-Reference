@@ -28,4 +28,20 @@ describe "Car" do
     end
   end
 
+  describe "#old?" do # user ? for methods that return boolean
+    context "when the year is before 2015" do
+      it "should return true" do
+        car = Car.new("Nissan", "Sunny", "2007")
+        expect(car.old?).to be true
+      end
+    end
+
+    context "when the year is after 2015" do
+      it "should return false" do
+        car = Car.new("Nissan", "Navara", "2015")
+        expect(car.old?).to be false
+      end
+    end
+  end
+
 end

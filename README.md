@@ -49,6 +49,10 @@ class Car
     @model = model
     @year = year
   end
+
+  def old?
+    @year < 2015>
+  end
 end
 ```
 
@@ -78,10 +82,28 @@ end
 
 #### instance methods
 ```ruby
-describe "#present_car" do # use # to refer to instance methods
+describe "#present_car" do # use # for instance methods
   it "should return a string with the car's year make and model" do
     car = Car.new("Honda", "Civic", "2000")
     expect(car.present_car).to eq("A 2000 Honda Civic")
   end
 end
+```
+
+### expect().to be true|false
+```ruby
+describe "#old?" do # user ? for methods that return boolean
+    context "when the year is before 2015" do
+      it "should return true" do
+        car = Car.new("Nissan", "Sunny", "2007")
+        expect(car.old?).to be true
+      end
+    end
+
+    context "when the year is after 2015" do
+      it "should return false" do
+        car = Car.new("Nissan", "Navara", "2015")
+        expect(car.old?).to be false
+      end
+    end
 ```
