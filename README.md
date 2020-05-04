@@ -1,5 +1,5 @@
 # RSpec-Reference
-A reference for writing and running tests with RSpec for Ruby
+A quick reference for writing and running tests with RSpec for Ruby
 
 ## Purpose
 Putting this together as I'm learning TDD with Ruby and RSpec
