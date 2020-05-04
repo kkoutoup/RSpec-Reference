@@ -28,6 +28,13 @@ describe "Car" do
     end
   end
 
+  describe "#present_car" do
+    it "should match a regular expression" do
+      car = Car.new("Honda", "Civic", "2000")
+      expect(car.present_car).to match(/^A\s\d+\s[A-Z]\w+\s[A-Z]\w+$/)
+    end
+  end
+
   describe "#old?" do # user ? for methods that return boolean
     context "when the year is before 2015" do
       it "should return true" do

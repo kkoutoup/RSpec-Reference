@@ -37,7 +37,6 @@ The following flags should follow the name of your spec file i.e. `my_spec.rb --
 | `:line_number` | N/A | i.e. `my_spec.rb:3` will run tests for code on line 3 |
 
 ### expect(). to eq()
-#### instance attributes
 ```ruby
 class Car
   attr_reader :make, :model
@@ -51,11 +50,11 @@ class Car
   end
 
   def old?
-    @year < 2015>
+    @year < 2015
   end
 end
 ```
-
+#### instance attributes
 ```ruby
 describe "Car" do
   describe "reading and writing object attributes" do
@@ -90,6 +89,16 @@ describe "#present_car" do # use # for instance methods
 end
 ```
 
+### expect().to match(regex)
+```ruby
+describe "#present_car" do
+  it "should match a regular expression" do
+    car = Car.new("Honda", "Civic", "2000")
+    expect(car.present_car).to match(/^A\s\d+\s[A-Z]\w+\s[A-Z]\w+$/)
+  end
+end
+```
+
 ### expect().to be true/false
 ```ruby
 describe "#old?" do # user ? for methods that return boolean
@@ -109,7 +118,7 @@ describe "#old?" do # user ? for methods that return boolean
 end
 ```
 
-### expect().to be / expect.to_not be
+### expect().to be / expect().to_not be
 ```ruby
 describe "#old?" do
   context "when the year is before 2015" do
