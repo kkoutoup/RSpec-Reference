@@ -180,7 +180,7 @@ describe "a new car" do
 end
 ```
 
-### expect().to be_an Class
+### expect().to be_a(n) Class
 ```ruby
 describe "parent class method Car.categories" do  
   it "should be of type array" do
