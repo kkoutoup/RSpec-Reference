@@ -204,7 +204,7 @@ describe "instance attribute year" do
   end
 end
 ```
-### expect().to include
+### expect().to include()
 ```ruby
 describe "#set_specifications should return a hash " do
   it "should have a :transmission key" do
