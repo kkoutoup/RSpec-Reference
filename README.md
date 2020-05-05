@@ -41,12 +41,13 @@ The following flags should follow the name of your spec file i.e. `my_spec.rb --
 class Car
 
   attr_reader :make
-  attr_accessor :model, :year
+  attr_accessor :model, :year, :specifications
 
-  def initialize(make, model, year)
+  def initialize(make, model, year, specifications = nil)
     @make = make
     @model = model
     @year = year
+    @specifications = specifications
   end
 
   def self.categories # class method
