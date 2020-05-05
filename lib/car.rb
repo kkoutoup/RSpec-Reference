@@ -1,12 +1,13 @@
 class Car
 
   attr_reader :make
-  attr_accessor :model, :year
+  attr_accessor :model, :year, :specifications
 
-  def initialize(make, model, year)
+  def initialize(make, model, year, specifications = nil)
     @make = make
     @model = model
-    @year = year
+    @year = year.to_s
+    @specifications = specifications
   end
 
   def self.categories # class method
@@ -21,12 +22,15 @@ class Car
     @model = @model.split(" ").map { |word| word.capitalize }.join(" ")
   end
   
-
   def present_car
     "A #{@year} #{@make} #{@model}"
   end
 
   def old?
     @year.to_i < 2015
+  end
+
+  def set_specifications(transmission, fuel_type)
+    @specifications = {transmission: transmission, fuel_type: fuel_type}
   end
 end

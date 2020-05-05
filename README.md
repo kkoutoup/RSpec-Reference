@@ -69,6 +69,10 @@ class Car
   def old?
     @year.to_i < 2015
   end
+
+  def set_specifications(transmission, fuel_type)
+    @specifications = {transmission: transmission, fuel_type: fuel_type}
+  end
 end
 ```
 ### expect(). to eq()
@@ -196,6 +200,29 @@ describe "instance attribute year" do
   it "should be of type String" do
     car = Car.new("Toyota", "Avensis", "2019")
     expect(car.year).to be_a String
+  end
+end
+```
+
+```ruby
+describe "#set_specifications should return a hash " do
+  it "should have a :transmission key" do
+    car = Car.new("BMW", "Z4", "2015")
+    car.set_specifications("manual", "unleaded") 
+    expect(car.specifications).to include(:transmission)
+  end
+
+  it "should have a :fuel_type key" do
+    car = Car.new("BMW", "Z4", "2015")
+    car.set_specifications("manual", "unleaded")
+    expect(car.specifications).to include(:fuel_type)
+  end
+
+  it "should return key-value pairs" do
+    car = Car.new("BMW", "Z4", "2015")
+    car.set_specifications("manual", "unleaded")
+    expect(car.specifications).to include(transmission: "manual")
+    expect(car.specifications).to include(fuel_type: "unleaded")
   end
 end
 ```

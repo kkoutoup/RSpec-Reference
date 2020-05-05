@@ -81,19 +81,19 @@ describe "Car" do
     end
   end
 
-  describe "a new car" do
+  describe "Car.new" do
     it "should be an instance of the parent class Car" do
       car = Car.new("Lancia", "Delta", "1987")
       expect(car).to be_instance_of(Car)
     end
   end
 
-  describe "parent class method Car.categories" do  
-    it "should be of type array" do
+  describe ".categories method" do  
+    it "should return an array" do
       expect(Car.categories).to be_an Array
     end
 
-    it "should be an array of strings" do
+    it "should return an array of strings" do
       expect(Car.categories.all?(String)).to be true
     end
   end
@@ -102,6 +102,28 @@ describe "Car" do
     it "should be of type String" do
       car = Car.new("Toyota", "Avensis", "2019")
       expect(car.year).to be_a String
+    end
+  end
+
+  describe "#set_specifications should return a hash " do
+
+    it "should have a :transmission key" do
+      car = Car.new("BMW", "Z4", "2015")
+      car.set_specifications("manual", "unleaded") 
+      expect(car.specifications).to include(:transmission)
+    end
+
+    it "should have a :fuel_type key" do
+      car = Car.new("BMW", "Z4", "2015")
+      car.set_specifications("manual", "unleaded")
+      expect(car.specifications).to include(:fuel_type)
+    end
+
+    it "should return key-value pairs" do
+      car = Car.new("BMW", "Z4", "2015")
+      car.set_specifications("manual", "unleaded")
+      expect(car.specifications).to include(transmission: "manual")
+      expect(car.specifications).to include(fuel_type: "unleaded")
     end
   end
 end
