@@ -133,6 +133,15 @@ describe "Car" do
       expect(car).to respond_to(:format_make)
     end
   end
+
+  describe "car instance" do
+    car = Car.new("porsche", "911", 2019)
+    it "should have attributes make, model, year" do
+      expect(car).to have_attributes(make: "porsche")
+      expect(car).to have_attributes(model: "911")
+      expect(car).to have_attributes(year: "2019")
+    end
+  end
 end
 
 describe Car do
