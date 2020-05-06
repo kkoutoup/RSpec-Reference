@@ -19,7 +19,7 @@ Putting this together as I'm learning TDD with Ruby and RSpec
   + [expect().to include()](https://github.com/kkoutoup/RSpec-Reference#expectto-include)
   + [expect().to respond_to()](https://github.com/kkoutoup/RSpec-Reference#expectto-respond_to)
   + [expect().to have_attributes()](https://github.com/kkoutoup/RSpec-Reference#expectto-have_attributes)
-  + [expect().to have_keys()](https://github.com/kkoutoup/RSpec-Reference#expectto-have_attributes)
+  + [expect().to have_key() / expect().to have_value()](https://github.com/kkoutoup/RSpec-Reference#expectto-have_attributes)
 + [let(){}](https://github.com/kkoutoup/RSpec-Reference#let)
 ## Resources
 [RSpec on Github](https://github.com/rspec)
