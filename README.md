@@ -175,7 +175,7 @@ describe "#old?" do
 end
 ```
 
-### expect().to be_instance_of(class)
+### expect().to be_instance_of(Class)
 ```ruby
 describe "a new car" do
   it "should be an instance of the parent class" do
