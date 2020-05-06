@@ -17,7 +17,7 @@ Putting this together as I'm learning TDD with Ruby and RSpec
   + [expect().to be_instance_of(Class)](https://github.com/kkoutoup/RSpec-Reference#expectto-be_instance_ofclass)
   + [expect().to be_a(n) Class](https://github.com/kkoutoup/RSpec-Reference#expectto-be_an-class)
   + [expect().to include()](https://github.com/kkoutoup/RSpec-Reference#expectto-include)
-
++ [let() {}](https://github.com/kkoutoup/RSpec-Reference#let)
 ## Resources
 [RSpec on Github](https://github.com/rspec)
 
@@ -238,6 +238,35 @@ describe "#set_specifications should return a hash " do
     car.set_specifications("manual", "unleaded")
     expect(car.specifications).to include(transmission: "manual")
     expect(car.specifications).to include(fuel_type: "unleaded")
+  end
+end
+```
+## let() {}
+```ruby
+describe Car do
+  let(:bmw) {Car.new("BMW", "Z4", 2014)}
+  let(:porsche) {Car.new("porsche", "911", 2017)}
+  let(:honda) {Car.new("honda", "type r", 2019, {transmission: "auto", fuel_type: "unleaded"})}
+
+  describe "#old?" do
+    context "when the year is before 2015" do
+      it "should return true" do
+        expect(bmw.old?).to be true
+      end
+    end
+
+    context "when the year is after 2015" do
+      it "should return false" do
+        expect(porsche.old?).to be false
+        expect(honda.old?).to be false
+      end
+    end
+  end
+
+  describe "#format_model" do
+    it "should format the car :model" do
+      expect(honda.format_model).to eq("Type R")
+    end
   end
 end
 ```

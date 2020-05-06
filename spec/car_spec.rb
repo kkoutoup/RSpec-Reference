@@ -127,3 +127,30 @@ describe "Car" do
     end
   end
 end
+
+describe Car do
+  let(:bmw) {Car.new("BMW", "Z4", 2014)}
+  let(:porsche) {Car.new("porsche", "911", 2017)}
+  let(:honda) {Car.new("honda", "type r", 2019, {transmission: "auto", fuel_type: "unleaded"})}
+
+  describe "#old?" do
+    context "when the year is before 2015" do
+      it "should return true" do
+        expect(bmw.old?).to be true
+      end
+    end
+
+    context "when the year is after 2015" do
+      it "should return false" do
+        expect(porsche.old?).to be false
+        expect(honda.old?).to be false
+      end
+    end
+  end
+
+  describe "#format_model" do
+    it "should format the car :model" do
+      expect(honda.format_model).to eq("Type R")
+    end
+  end
+end
