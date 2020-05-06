@@ -9,7 +9,14 @@ Putting this together as I'm learning TDD with Ruby and RSpec
 + [File structure](https://github.com/kkoutoup/RSpec-Reference#file-structure)
 + [Flags](https://github.com/kkoutoup/RSpec-Reference#flags)
 + [Example Class](https://github.com/kkoutoup/RSpec-Reference#example-class)
-+ [expect](https://github.com/kkoutoup/RSpec-Reference#expect)
++ [expect()](https://github.com/kkoutoup/RSpec-Reference#expect)
+++[expect().to eq()](https://github.com/kkoutoup/RSpec-Reference#expect-to-eq)
+++[expect().to match(regex)](https://github.com/kkoutoup/RSpec-Reference#expectto-matchregex)
+++[expect().to be true/false](https://github.com/kkoutoup/RSpec-Reference#expectto-be-truefalse)
+++[expect().to be / expect().to_not be](https://github.com/kkoutoup/RSpec-Reference#expectto-be--expectto_not-be)
+++[expect().to be_instance_of(Class)](https://github.com/kkoutoup/RSpec-Reference#expectto-be_instance_ofclass)
+++[expect().to be_a(n) Class](https://github.com/kkoutoup/RSpec-Reference#expectto-be_an-class)
+++[expect().to include()](https://github.com/kkoutoup/RSpec-Reference#expectto-include)
 
 ## Resources
 [RSpec on Github](https://github.com/rspec)
