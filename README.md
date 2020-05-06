@@ -242,7 +242,7 @@ describe "#set_specifications should return a hash " do
   end
 end
 ```
-### expect(). to respond_to()
+### expect().to respond_to()
 ```ruby
 describe "car instance" do
   car = Car.new("porsche", "911", 2018)
