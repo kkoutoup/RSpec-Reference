@@ -142,6 +142,20 @@ describe "Car" do
       expect(car).to have_attributes(year: "2019")
     end
   end
+
+  describe "car instance" do
+    car = Car.new("porsche", "911", 2019, {transmission: "auto", fuel_type: "diesel"})
+    context "specifications" do
+      it "should have :transmission and :fuel_type keys" do
+        expect(car.specifications).to have_key(:transmission)
+        expect(car.specifications).to have_key(:fuel_type)
+      end
+      it ":transmission and :fuel_type keys should have corresponding values" do
+        expect(car.specifications).to have_value("auto")
+        expect(car.specifications).to have_value("diesel")
+      end
+    end
+  end
 end
 
 describe Car do
