@@ -31,6 +31,6 @@ class Car
   end
 
   def set_specifications(transmission, fuel_type)
-    @specifications = {transmission: transmission, fuel_type: fuel_type}
+    @specifications = { transmission: transmission, fuel_type: fuel_type }
   end
 end

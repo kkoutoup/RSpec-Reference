@@ -4,6 +4,13 @@ A quick reference for writing and running tests with RSpec for Ruby
 ## Purpose
 Putting this together as I'm learning TDD with Ruby and RSpec
 
+## Contents
++ [Installation](https://github.com/kkoutoup/RSpec-Reference#installation)
++ [File structure](https://github.com/kkoutoup/RSpec-Reference#file-structure)
++ [Flags](https://github.com/kkoutoup/RSpec-Reference#flags)
++ [Example Class](https://github.com/kkoutoup/RSpec-Reference#example-class)
++ [expect](https://github.com/kkoutoup/RSpec-Reference#expect)
+
 ## Resources
 [RSpec on Github](https://github.com/rspec)
 
