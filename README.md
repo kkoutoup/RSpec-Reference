@@ -10,7 +10,7 @@ Putting this together as I'm learning TDD with Ruby and RSpec
 + [Flags](https://github.com/kkoutoup/RSpec-Reference#flags)
 + [Example Class](https://github.com/kkoutoup/RSpec-Reference#example-class)
 + [expect()](https://github.com/kkoutoup/RSpec-Reference#expect)
-  + [expect().to eq()](https://github.com/kkoutoup/RSpec-Reference#expect-to-eq)
+  + [expect().to eq()](https://github.com/kkoutoup/RSpec-Reference#expectto-eq)
   + [expect().to match(regex)](https://github.com/kkoutoup/RSpec-Reference#expectto-matchregex)
   + [expect().to be true/false](https://github.com/kkoutoup/RSpec-Reference#expectto-be-truefalse)
   + [expect().to be / expect().to_not be](https://github.com/kkoutoup/RSpec-Reference#expectto-be--expectto_not-be)
@@ -91,7 +91,7 @@ class Car
 end
 ```
 ## expect()
-### expect(). to eq()
+### expect().to eq()
 
 #### instance attributes
 ```ruby
