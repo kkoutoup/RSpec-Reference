@@ -62,7 +62,6 @@ class Car
     @model = @model.split(" ").map { |word| word.capitalize }.join(" ")
   end
   
-
   def present_car
     "A #{@year} #{@make} #{@model}"
   end
