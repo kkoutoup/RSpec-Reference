@@ -78,7 +78,7 @@ end
 ## expect()
 ### expect(). to eq()
 
-### instance attributes
+#### instance attributes
 ```ruby
 describe "Car" do
   describe "reading and writing object attributes" do
@@ -103,7 +103,7 @@ describe "Car" do
 end
 ```
 
-### instance methods
+#### instance methods
 ```ruby
 describe "#format_make" do
   it "should capitalize the car's :make" do
