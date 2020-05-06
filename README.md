@@ -17,6 +17,7 @@ Putting this together as I'm learning TDD with Ruby and RSpec
   + [expect().to be_instance_of(Class)](https://github.com/kkoutoup/RSpec-Reference#expectto-be_instance_ofclass)
   + [expect().to be_a(n) Class](https://github.com/kkoutoup/RSpec-Reference#expectto-be_an-class)
   + [expect().to include()](https://github.com/kkoutoup/RSpec-Reference#expectto-include)
+  + [expect().to respond_to()](https://github.com/kkoutoup/RSpec-Reference#expectto-respond_to)
 + [let(){}](https://github.com/kkoutoup/RSpec-Reference#let)
 ## Resources
 [RSpec on Github](https://github.com/rspec)
@@ -238,6 +239,15 @@ describe "#set_specifications should return a hash " do
     car.set_specifications("manual", "unleaded")
     expect(car.specifications).to include(transmission: "manual")
     expect(car.specifications).to include(fuel_type: "unleaded")
+  end
+end
+```
+### expect(). to respond_to()
+```ruby
+describe "car instance" do
+  car = Car.new("porsche", "911", 2018)
+  it "should respond to #format_make" do
+    expect(car).to respond_to(:format_make)
   end
 end
 ```

@@ -126,6 +126,13 @@ describe "Car" do
       expect(car.specifications).to include(fuel_type: "unleaded")
     end
   end
+
+  describe "car instance" do
+    car = Car.new("porsche", "911", 2018)
+    it "should respond to #format_make" do
+      expect(car).to respond_to(:format_make)
+    end
+  end
 end
 
 describe Car do
