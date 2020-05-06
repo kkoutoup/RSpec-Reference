@@ -241,7 +241,7 @@ describe "#set_specifications should return a hash " do
   end
 end
 ```
-## let() {}
+## let(){}
 ```ruby
 describe Car do
   let(:bmw) {Car.new("BMW", "Z4", 2014)}
