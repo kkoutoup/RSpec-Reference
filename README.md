@@ -75,7 +75,8 @@ class Car
   end
 end
 ```
-## expect(). to eq()
+## expect()
+### expect(). to eq()
 
 ### instance attributes
 ```ruby
