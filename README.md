@@ -17,7 +17,7 @@ Putting this together as I'm learning TDD with Ruby and RSpec
   + [expect().to be_instance_of(Class)](https://github.com/kkoutoup/RSpec-Reference#expectto-be_instance_ofclass)
   + [expect().to be_a(n) Class](https://github.com/kkoutoup/RSpec-Reference#expectto-be_an-class)
   + [expect().to include()](https://github.com/kkoutoup/RSpec-Reference#expectto-include)
-+ [let() {}](https://github.com/kkoutoup/RSpec-Reference#let)
++ [let(){}](https://github.com/kkoutoup/RSpec-Reference#let)
 ## Resources
 [RSpec on Github](https://github.com/rspec)
 
