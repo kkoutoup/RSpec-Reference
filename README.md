@@ -17,7 +17,7 @@ Putting this together as I'm learning TDD with Ruby and RSpec
   + [expect().to be_instance_of(Class)](https://github.com/kkoutoup/RSpec-Reference#expectto-be_instance_ofclass)
   + [expect().to be_a(n) Class](https://github.com/kkoutoup/RSpec-Reference#expectto-be_an-class)
   + [expect().to include()](https://github.com/kkoutoup/RSpec-Reference#expectto-include)
-  + [expect().to respond_to() / .not_to respond_to()](https://github.com/kkoutoup/RSpec-Reference#expectto-respond_to)
+  + [expect().to respond_to() / .not_to respond_to()](https://github.com/kkoutoup/RSpec-Reference#expectto-respond_to--not_to-respond_to)
   + [expect().to have_attributes()](https://github.com/kkoutoup/RSpec-Reference#expectto-have_attributes)
   + [expect().to have_key() / expect().to have_value()](https://github.com/kkoutoup/RSpec-Reference#expectto-have_key--have_value)
 + [let(){}](https://github.com/kkoutoup/RSpec-Reference#let)
@@ -173,7 +173,7 @@ describe "#old?" do # user ? for methods that return boolean
 end
 ```
 
-### expect().to be / expect().to_not be
+### expect().to be / .to_not be
 ```ruby
 describe "#old?" do
   context "when the year is before 2015" do
