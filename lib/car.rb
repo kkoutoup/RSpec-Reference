@@ -8,6 +8,7 @@ class Car
     @model = model
     @year = year.to_s
     @specifications = specifications
+    @previous_accidents = []
   end
 
   def self.categories # class method

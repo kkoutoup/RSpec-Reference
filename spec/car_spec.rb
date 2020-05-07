@@ -134,6 +134,20 @@ describe "Car" do
     end
   end
 
+  describe "make" do
+    car = Car.new("porsche", "911", 2018)
+    it "should not allow modification of make" do
+      expect(car).not_to respond_to(:make=)
+    end
+  end
+
+  describe "previous accidents" do
+    car = Car.new("mercedes", "CLK-250", 2019)
+    it "instance should not have access to previous accidents from outside" do
+      expect(car).not_to respond_to(:previous_accidents)
+    end
+  end
+
   describe "car instance" do
     car = Car.new("porsche", "911", 2019)
     it "should have attributes make, model, year" do

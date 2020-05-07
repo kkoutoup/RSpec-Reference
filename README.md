@@ -17,7 +17,7 @@ Putting this together as I'm learning TDD with Ruby and RSpec
   + [expect().to be_instance_of(Class)](https://github.com/kkoutoup/RSpec-Reference#expectto-be_instance_ofclass)
   + [expect().to be_a(n) Class](https://github.com/kkoutoup/RSpec-Reference#expectto-be_an-class)
   + [expect().to include()](https://github.com/kkoutoup/RSpec-Reference#expectto-include)
-  + [expect().to respond_to()](https://github.com/kkoutoup/RSpec-Reference#expectto-respond_to)
+  + [expect().to respond_to() / .not_to respond_to()](https://github.com/kkoutoup/RSpec-Reference#expectto-respond_to)
   + [expect().to have_attributes()](https://github.com/kkoutoup/RSpec-Reference#expectto-have_attributes)
   + [expect().to have_key() / expect().to have_value()](https://github.com/kkoutoup/RSpec-Reference#expectto-have_key--have_value)
 + [let(){}](https://github.com/kkoutoup/RSpec-Reference#let)
@@ -244,7 +244,22 @@ describe "#set_specifications should return a hash " do
   end
 end
 ```
-### expect().to respond_to()
+### expect().to respond_to() / .not_to respond_to()
+```ruby
+describe "make" do
+  car = Car.new("porsche", "911", 2018)
+  it "should not allow modification of make" do
+    expect(car).not_to respond_to(:make=)
+  end
+end
+
+describe "previous accidents" do
+  car = Car.new("mercedes", "CLK-250", 2019)
+  it "instance should not have access to previous accidents from outside" do
+    expect(car).not_to respond_to(:previous_accidents)
+  end
+end
+```
 ```ruby
 describe "car instance" do
   car = Car.new("porsche", "911", 2018)
