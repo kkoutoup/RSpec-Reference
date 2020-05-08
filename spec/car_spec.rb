@@ -29,14 +29,14 @@ describe "Car" do
   end
 
   describe "#format_model" do
-    it "should capitalize every word in a car's model" do
+    it "should capitalize every word in a car's :model" do
       car = Car.new("Honda", "type r", "2000")
       expect(car.format_model).to eq("Type R")
     end
   end
   
   describe "#present_car" do # use # to refer to instance methods
-    it "should return a string with the car's year, make and model" do
+    it "should return a string with the car's :year, :make and :model" do
       car = Car.new("Honda", "Civic", "2000")
       expect(car.present_car).to eq("A 2000 Honda Civic")
     end
@@ -136,7 +136,7 @@ describe "Car" do
 
   describe "make" do
     car = Car.new("porsche", "911", 2018)
-    it "should not allow modification of make" do
+    it "should not allow modification of :make" do
       expect(car).not_to respond_to(:make=)
     end
   end
@@ -150,7 +150,7 @@ describe "Car" do
 
   describe "car instance" do
     car = Car.new("porsche", "911", 2019)
-    it "should have attributes make, model, year" do
+    it "should have attributes :make, :model, :year" do
       expect(car).to have_attributes(make: "porsche")
       expect(car).to have_attributes(model: "911")
       expect(car).to have_attributes(year: "2019")
@@ -173,28 +173,42 @@ describe "Car" do
 end
 
 describe Car do
-  let(:bmw) {Car.new("BMW", "Z4", 2014)}
-  let(:porsche) {Car.new("porsche", "911", 2017)}
-  let(:honda) {Car.new("honda", "type r", 2019, {transmission: "auto", fuel_type: "unleaded"})}
+  context "using let to define class instances for testing" do
+    let(:bmw) {Car.new("BMW", "Z4", 2014)}
+    let(:porsche) {Car.new("porsche", "911", 2017)}
+    let(:honda) {Car.new("honda", "type r", 2019, {transmission: "auto", fuel_type: "unleaded"})}
 
-  describe "#old?" do
-    context "when the year is before 2015" do
-      it "should return true" do
-        expect(bmw.old?).to be true
+    describe "#old?" do
+      context "when the year is before 2015" do
+        it "should return true" do
+          expect(bmw.old?).to be true
+        end
+      end
+
+      context "when the year is after 2015" do
+        it "should return false" do
+          expect(porsche.old?).to be false
+          expect(honda.old?).to be false
+        end
       end
     end
 
-    context "when the year is after 2015" do
-      it "should return false" do
-        expect(porsche.old?).to be false
-        expect(honda.old?).to be false
+    describe "#format_model" do
+      it "should format the car :model" do
+        expect(honda.format_model).to eq("Type R")
       end
     end
   end
+end
 
-  describe "#format_model" do
-    it "should format the car :model" do
-      expect(honda.format_model).to eq("Type R")
+describe Car do
+  context "using .send to test private methods" do
+    let(:bmw) {Car.new("BMW", "Z4", 2014)}
+    describe "car.add_to_previous_accidents" do
+      it "should add a accident log hash to @previous_accidents" do
+        bmw.send(:add_to_previous_accidents, {year: 2018, severe: true})
+        expect(bmw.instance_variable_get(:@previous_accidents).length).to eq(1)
+      end
     end
   end
 end
