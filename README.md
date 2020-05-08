@@ -21,7 +21,7 @@ Putting this together as I'm learning TDD with Ruby and RSpec
   + [expect().to have_attributes()](https://github.com/kkoutoup/RSpec-Reference#expectto-have_attributes)
   + [expect().to have_key() / expect().to have_value()](https://github.com/kkoutoup/RSpec-Reference#expectto-have_key--have_value)
 + [let(){}](https://github.com/kkoutoup/RSpec-Reference#let)
-+ [send() && instance_variable_get()](https://github.com/kkoutoup/RSpec-Reference#end)
++ [send() && instance_variable_get()](https://github.com/kkoutoup/RSpec-Reference#send--instance_variable_get)
 ## Resources
 [RSpec on Github](https://github.com/rspec)
 
@@ -339,7 +339,7 @@ describe Car do
   end
 end
 ```
-### send() && instance_variable_get()
+## send() && instance_variable_get()
 ```ruby
 describe Car do
   context "using .send to test private methods" do
