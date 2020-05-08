@@ -21,6 +21,7 @@ Putting this together as I'm learning TDD with Ruby and RSpec
   + [expect().to have_attributes()](https://github.com/kkoutoup/RSpec-Reference#expectto-have_attributes)
   + [expect().to have_key() / expect().to have_value()](https://github.com/kkoutoup/RSpec-Reference#expectto-have_key--have_value)
 + [let(){}](https://github.com/kkoutoup/RSpec-Reference#let)
++ [send() && instance_variable_get()](https://github.com/kkoutoup/RSpec-Reference#end)
 ## Resources
 [RSpec on Github](https://github.com/rspec)
 
@@ -55,6 +56,9 @@ The following flags should follow the name of your spec file i.e. `my_spec.rb --
 
 ## Example Class
 ```ruby
+class LogError < StandardError
+end
+
 class Car
 
   attr_reader :make
@@ -63,7 +67,7 @@ class Car
   def initialize(make, model, year, specifications = nil)
     @make = make
     @model = model
-    @year = year
+    @year = year.to_s
     @specifications = specifications
     @previous_accidents = []
   end
@@ -89,7 +93,17 @@ class Car
   end
 
   def set_specifications(transmission, fuel_type)
-    @specifications = {transmission: transmission, fuel_type: fuel_type}
+    @specifications = { transmission: transmission, fuel_type: fuel_type }
+  end
+
+  private
+
+  def add_to_previous_accidents(args={})
+    # should return an error if args is empty
+     fail LogError, "No information provided" if args.empty?
+
+     accident_log = args
+     @previous_accidents << accident_log
   end
 end
 ```
@@ -321,6 +335,20 @@ describe Car do
   describe "#format_model" do
     it "should format the car :model" do
       expect(honda.format_model).to eq("Type R")
+    end
+  end
+end
+```
+### send() && instance_variable_get()
+```ruby
+describe Car do
+  context "using .send to test private methods" do
+    let(:bmw) {Car.new("BMW", "Z4", 2014)}
+    describe "car.add_to_previous_accidents" do
+      it "should add a accident log hash to @previous_accidents" do
+        bmw.send(:add_to_previous_accidents, {year: 2018, severe: true})
+        expect(bmw.instance_variable_get(:@previous_accidents).length).to eq(1)
+      end
     end
   end
 end

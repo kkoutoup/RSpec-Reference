@@ -1,3 +1,6 @@
+class LogError < StandardError
+end
+
 class Car
 
   attr_reader :make
@@ -33,5 +36,15 @@ class Car
 
   def set_specifications(transmission, fuel_type)
     @specifications = { transmission: transmission, fuel_type: fuel_type }
+  end
+
+  private
+
+  def add_to_previous_accidents(args={})
+    # should return an error if args is empty
+     fail LogError, "No information provided" if args.empty?
+
+     accident_log = args
+     @previous_accidents << accident_log
   end
 end
