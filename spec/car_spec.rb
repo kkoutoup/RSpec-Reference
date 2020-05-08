@@ -208,6 +208,10 @@ describe Car do
       it "should add a accident log hash to @previous_accidents" do
         bmw.send(:add_to_previous_accidents, {year: 2018, severe: true})
         expect(bmw.instance_variable_get(:@previous_accidents).length).to eq(1)
+        expect(bmw.instance_variable_get(:@previous_accidents)[0]).to have_key(:year)
+        expect(bmw.instance_variable_get(:@previous_accidents)[0]).to have_key(:severe)
+        expect(bmw.instance_variable_get(:@previous_accidents)[0][:year]).to be(2018)
+        expect(bmw.instance_variable_get(:@previous_accidents)[0][:severe]).to be true
       end
     end
   end
