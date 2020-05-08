@@ -42,9 +42,9 @@ class Car
 
   def add_to_previous_accidents(args={})
     # should return an error if args is empty
-     fail LogError, "No information provided" if args.empty?
+    fail LogError, "No information provided" if args.empty?
 
-     accident_log = args
-     @previous_accidents << accident_log
+    accident_log = args
+    @previous_accidents << accident_log
   end
 end
