@@ -38,6 +38,7 @@ spec
   |__file_name_spec.rb
   |__spec_helper.rb
 .rspec
+.rubocop.yml [optional file for rubocop mods]
 ```
 
 ## Flags
