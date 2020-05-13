@@ -38,8 +38,9 @@ spec
   |__file_name_spec.rb
   |__spec_helper.rb
 .rspec
-.rubocop.yml [optional file for rubocop mods]
+.rubocop.yml [*optional file for rubocop mods]
 ```
+*[Rubocop default configuration](https://github.com/rubocop-hq/rubocop/blob/master/config/default.yml)
 
 ## Flags
 The following flags should follow the name of your spec file i.e. `my_spec.rb --color`. These flags can also be part of your ```.rspec``` file.
