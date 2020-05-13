@@ -34,7 +34,7 @@ describe 'Car' do
       expect(car.format_model).to eq('Type R')
     end
   end
-  
+
   describe '#present_car' do # use # to refer to instance methods
     it 'should return a string with the car :year, :make and :model' do
       car = Car.new('Honda', 'Civic', '2000')
@@ -88,7 +88,7 @@ describe 'Car' do
     end
   end
 
-  describe '.categories method' do  
+  describe '.categories method' do
     it 'should return an array' do
       expect(Car.categories).to be_an Array
     end
@@ -106,10 +106,9 @@ describe 'Car' do
   end
 
   describe '#set_specifications should return a hash ' do
-
     it 'should have a :transmission key' do
       car = Car.new('BMW', 'Z4', '2015')
-      car.set_specifications('manual', 'unleaded') 
+      car.set_specifications('manual', 'unleaded')
       expect(car.specifications).to include(:transmission)
     end
 

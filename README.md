@@ -243,7 +243,7 @@ end
 describe '#set_specifications should return a hash ' do
   it 'should have a :transmission key' do
     car = Car.new('BMW', 'Z4', '2015')
-    car.set_specifications('manual', 'unleaded') 
+    car.set_specifications('manual', 'unleaded')
     expect(car.specifications).to include(:transmission)
   end
 
